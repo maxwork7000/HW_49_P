@@ -9,7 +9,7 @@ public class CurrencyRate {
 
 	static String CurrencRate(String pair_code) throws Exception {
 		String url_currconv = "https://free.currconv.com/api/v7/convert";
-		String api_key = "";  // !!! INPUT YOUR KEY
+		String api_key = "f55e04794439f70e985b";  // !!! INPUT YOUR KEY
 		JSONObject json = new JSONObject();
 		JSONParser jp = new JSONParser();
 		URL rate_url = new URL(url_currconv + "?q=" + pair_code + "&compact=ultra&apiKey=" + api_key);

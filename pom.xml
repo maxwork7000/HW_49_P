@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>core</groupId>
-	<artifactId>HW_49</artifactId>
+	<artifactId>HW_49_P</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>HW_49</name>
+	<name>HW_49_P</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

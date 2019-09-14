@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		String us_currency_symbol = "$";
-		String url = "https://www.gnc.com/gnc/";
+		String url = "https://www.amazon.com/dp/B07KZBPDBG?ref=ODS_v2_FS_AUCC_dtke";
 
 		Logger logger = Logger.getLogger("");
 		logger.setLevel(Level.OFF);
@@ -27,13 +27,14 @@ public class Main {
 
 		Thread.sleep(5000);
 		String title = driver.getTitle();
-		String price = driver.findElement(By.xpath("//*[@id=\"c1d8d8a6c5abda5d1f93215acd\"]/div[5]/span[1]")).getText().trim();
+		String price = driver.findElement(By.xpath("//*[@id=\"priceblock_ourprice\"]")).getText().trim();
 		
-		String regex = "^([\\$]?[1-9]{2}[\\.]?[9-9]{2})$";
+		String regex = "^([\\$]?[1-9]{1,2}[\\.]?[1-9]{2})$";
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(price);
 		m.find();
 		
+		//double original_price = Double.parseDouble(m.group(1).replace("$", "").replace ("U", "").replace("S", "").replace(" ", ""));
 		double original_price = Double.parseDouble(m.group(1).replace("$", ""));
 		
 
